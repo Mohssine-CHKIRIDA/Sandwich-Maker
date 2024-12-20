@@ -66,9 +66,9 @@ function finishSandwich() {
     Sandwich.appendChild(tophalf);
 
     tophalf.style.position = 'absolute';
-    tophalf.style.top = `${20 - bottomhalf.childElementCount * 3}%`; // Adjust position above the ingredients
-    tophalf.style.left = '18%'; // Match horizontal alignment of bottomhalf
-    tophalf.style.zIndex = '15'; // Ensure it is on top of all ingredients
+    tophalf.style.top = `${20 - bottomhalf.childElementCount * 3}%`; 
+    tophalf.style.left = '18%'; 
+    tophalf.style.zIndex = '15'; 
     isSandwichFinished=true;
 
     }   

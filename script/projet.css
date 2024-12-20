@@ -41,7 +41,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 15vw; /* Match the bottomhalf's width */
+  width: 15vw; 
   height: 10vw; /* Dome-like height for a burger bun */
   background: linear-gradient(145deg, #f5a623, #e8a642); /* Warm golden-brown color gradient */
   border-radius: 50%; /* Fully rounded dome shape */
