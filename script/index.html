@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sandwich Maker</title>
+    <link rel="stylesheet" href="projet.css">
+</head>
+<body>
+    <h1 class="title">Sandwich Maker</h1>
+    <p class="exp">
+        To create your sandwich , click on the ingrediants you want to add.
+    </p>
+    <div>
+        <button class="clearPlate" onclick="clearPlate()">Clear Plate</button>
+        <button id="finishButton" onclick="">Finish</button>
+    </div>
+    <div class="main-board">   
+        <div class="item-track" >
+            <div id="ing">
+                <div class="items item1"><img src="/images/ham-removebg-preview.png" alt="ham" class="track-item" onclick="ajouter(event)"></div>
+                <div class="items item2"><img src="/images/onion-removebg-preview.png" alt="onion" class="track-item" onclick="ajouter(event)"></div>
+                <div class="items item3"><img src="/images/cheese-removebg-preview.png" alt="cheese" class="track-item" onclick="ajouter(event)"></div>
+                <div class="items item4"><img src="/images/tomato-removebg-preview.png" alt="tomato" class="track-item" onclick="ajouter(event)"></div>
+                <div class="items item5"><img src="/images/egg.png" alt="egg" class="track-item" onclick="ajouter(event)"></div>
+                <div class="items item6"><img src="/images/lactose.png" alt="lactose"  class="track-item" onclick="ajouter(event)"></div>
+                <div class="items item7"><img src="/images/meat.png" alt="meat" class="track-item" onclick="ajouter(event)"></div>
+                <div class="items item8"><img src="/images/yallow meat.png" alt="yallow meat" class="track-item" onclick="ajouter(event)"></div>
+                <div class="items item9"><img src="/images/sausage.png" alt="sausage" class="track-item" onclick="ajouter(event)"></div>
+            </div>
+        </div> 
+        <div class="plate">
+            
+            <div class="bottomhalf"></div> 
+        </div>
+    </div>
+    <script src="./projet.js"></script>
+</body>
+</html>

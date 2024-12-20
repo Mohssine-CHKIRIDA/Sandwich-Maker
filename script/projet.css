@@ -1,0 +1,258 @@
+body {
+  background-color: rgba(19, 51, 156, 0.808);
+  color: black;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  font-style: oblique;
+}
+
+.main-board {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-top: 80px;
+  border-radius: 50px;
+  width: 40vw; /* Matches the width of the main board */
+  height: 30vw; /* Matches the height of the main board */
+  background-color: burlywood;
+  transform-style: preserve-3d;
+  transform: rotateX(40deg);
+}
+
+.plate {
+  position: absolute;
+  width: 60%;
+  height: 50%;
+  background-color: beige;
+  border-radius: 50%;
+  z-index: 2;
+  box-shadow: 1px 5px 10px black;
+  justify-content: center;
+  align-items: center;
+}
+.tophalf {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 15vw; /* Match the bottomhalf's width */
+  height: 10vw; /* Dome-like height for a burger bun */
+  background: linear-gradient(145deg, #f5a623, #e8a642); /* Warm golden-brown color gradient */
+  border-radius: 50%; /* Fully rounded dome shape */
+  box-shadow: 
+    inset 0 -9px 10px rgba(0, 0, 0, 0.3), /* Inner shadow for texture */
+    0 6px 12px rgba(0, 0, 0, 0.4); /* Outer shadow for depth */
+  border: 3px solid #d4881e; /* Slightly darker border for contrast */
+  transform-style: preserve-3d;
+  transform: rotateX(40deg); /* Lift and rotate for a 3D burger effect */
+  position: absolute;
+  z-index: 4; /* Layered above the bottomhalf */
+  left: 20%;
+}
+
+.tophalf::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url('path-to-seed-pattern.png'); 
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 5;
+}
+.tophalf::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 2%, transparent 4%);
+  background-size: 8px 8px; 
+  background-position: center;
+  mask-image: radial-gradient(circle, black 40%, transparent 60%);
+  mask-composite: exclude;
+  z-index: 5; 
+  transform: rotateX(0deg); 
+}
+.tophalf:hover {
+  transform: translateY(-22%) rotateX(20deg) scale(1.05);
+  transition: transform 0.3s ease-in-out;
+}
+
+
+.bottomhalf {
+  display: flex;
+  top: 18%;
+  align-items: center;
+  justify-content: center;
+  left: 18%;
+  width: 15vw;
+  height: 10vw; /* Légèrement aplati pour une meilleure proportion */
+  background: linear-gradient(145deg, #f7c469, #e8a642); /* Dégradé pour simuler la texture du pain */
+  border-radius: 50% 50% 30% 30%; /* Courbes ajustées pour un effet réaliste */
+  box-shadow: 
+    inset 0 -10px 4px rgba(0, 0, 0, 0.3), /* Ombre intérieure pour plus de relief */
+    0 6px 12px rgba(0, 0, 0, 0.4); /* Ombre extérieure plus prononcée */
+  border: 2px solid #d4881e; /* Bordure légèrement plus sombre */
+  transform-style: preserve-3d;
+  transform: rotateX(35deg); /* Réduit l'inclinaison pour plus de naturel */
+  position: relative;
+  z-index: 3;
+}
+
+.bottomhalf::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.6) 2%, transparent 3%);
+  background-size: 5px 5px;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+.bottomhalf:hover {
+  transform: rotateX(25deg) scale(1.05);
+  transition: transform 0.3s ease-in-out;
+}
+
+.item-track {
+  position: absolute;
+  width: 40%;
+  height: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  transform: rotate(0deg); /* Keep the track stationary */
+}
+
+.item-track::before {
+  content: '';
+  position: absolute;
+  width: 40vw; /* Slightly larger than the item-track */
+  height: 30vw;
+  border-radius: 50px;
+  border: 4px dashed rgba(0, 0, 0, 0.7); /* Dashed border for train rail effect */
+  z-index: -1;
+}
+
+.item-track::after {
+  content: '';
+  position: absolute;
+  border-radius: 50px;
+  width: 33vw; /* Slightly smaller than the item-track */
+  height: 24vw;
+  border: 4px dashed rgba(0, 0, 0, 0.7); /* Dashed border for train rail effect */
+  z-index: 1;
+}
+
+.items {
+  position: absolute;
+  width: 5vw;
+  height: 5vw;
+  border-radius: 50%;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 2px 3px 4px black ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  animation: followPath 15s linear infinite;
+  display: block;
+  
+}
+.items img {
+  width: 80%;
+  height: 80%;
+  cursor: pointer;
+  
+}
+.items img:hover {
+  transform: scale(1.2);
+  transition: transform 0.3s ease;
+}
+.added-ingredient {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.added-ingredient:hover {
+  transform: scale(1.1); 
+}
+
+@keyframes followPath {
+  0% {
+    transform: translate(-20vw, -16.5vw) rotate(0deg); /* Starting position */
+  }
+  25% {
+    transform: translate(15vw, -16vw) rotate(90deg); /* Move to the top-right corner */
+  }
+  50% {
+    transform: translate(15vw, 12vw) rotate(180deg); /* Move to the bottom-right corner */
+  }
+  75% {
+    transform: translate(-19vw, 11.5vw) rotate(270deg); /* Move to the bottom-left corner */
+  }
+  100% {
+    transform: translate(-20.5vw, -16vw) rotate(360deg); /* Back to the starting point */
+  }
+}
+
+.items:nth-child(1) { animation-delay: 0s; }
+.items:nth-child(2) { animation-delay: -1.67s; }
+.items:nth-child(3) { animation-delay: -3.33s; }
+.items:nth-child(4) { animation-delay: -5s; }
+.items:nth-child(5) { animation-delay: -6.67s; }
+.items:nth-child(6) { animation-delay: -8.33s; }
+.items:nth-child(7) { animation-delay: -10s; }
+.items:nth-child(8) { animation-delay: -11.67s; }
+.items:nth-child(9) { animation-delay: -13.33s; }
+#finishButton {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #4caf50; /* Green background */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#finishButton:hover {
+  background-color: #45a049; /* Darker green on hover */
+  transform: scale(1.05); /* Slight enlargement */
+}
+
+#finishButton:active {
+  transform: scale(0.95); /* Slight shrink on click */
+}
+.clearPlate {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #4caf50; /* Green background */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.clearPlate:hover {
+  background-color: #45a049; /* Darker green on hover */
+  transform: scale(1.05); /* Slight enlargement */
+}
+
+.clearPlate:active {
+  transform: scale(0.95); /* Slight shrink on click */
+}
+
+
