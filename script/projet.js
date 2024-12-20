@@ -50,7 +50,6 @@ function clearPlate() {
           }
         isSandwichFinished=false;
         console.log("All ingredients have been cleared from the plate.");
-
     }
 document.getElementById('finishButton').addEventListener('click', finishSandwich);
 
@@ -64,10 +63,8 @@ function finishSandwich() {
     const tophalf = document.createElement('div');
     tophalf.classList.add('tophalf');
 
-    // Append above the ingredients
     Sandwich.appendChild(tophalf);
 
-    // Align the top bun visually
     tophalf.style.position = 'absolute';
     tophalf.style.top = `${20 - bottomhalf.childElementCount * 3}%`; // Adjust position above the ingredients
     tophalf.style.left = '18%'; // Match horizontal alignment of bottomhalf
