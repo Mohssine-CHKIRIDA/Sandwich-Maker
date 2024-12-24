@@ -19,8 +19,8 @@ body {
   position: relative;
   margin-top: 80px;
   border-radius: 50px;
-  width: 40vw; /* Matches the width of the main board */
-  height: 30vw; /* Matches the height of the main board */
+  width: 50vw; /* Matches the width of the main board */
+  height: 40vw; /* Matches the height of the main board */
   background-color: burlywood;
   transform-style: preserve-3d;
   transform: rotateX(40deg);
@@ -28,7 +28,7 @@ body {
 
 .plate {
   position: absolute;
-  width: 60%;
+  width: 50%;
   height: 50%;
   background-color: beige;
   border-radius: 50%;
@@ -122,8 +122,8 @@ body {
 }
 .item-track {
   position: absolute;
-  width: 40%;
-  height: 40%;
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -134,8 +134,8 @@ body {
 .item-track::before {
   content: '';
   position: absolute;
-  width: 40vw; /* Slightly larger than the item-track */
-  height: 30vw;
+  width: 50vw; /* Slightly larger than the item-track */
+  height: 40vw;
   border-radius: 50px;
   border: 4px dashed rgba(0, 0, 0, 0.7); /* Dashed border for train rail effect */
   z-index: -1;
@@ -145,16 +145,16 @@ body {
   content: '';
   position: absolute;
   border-radius: 50px;
-  width: 33vw; /* Slightly smaller than the item-track */
-  height: 24vw;
+  width: 43vw; /* Slightly smaller than the item-track */
+  height: 32vw;
   border: 4px dashed rgba(0, 0, 0, 0.7); /* Dashed border for train rail effect */
   z-index: 1;
 }
 
 .items {
   position: absolute;
-  width: 5vw;
-  height: 5vw;
+  width: 7vw;
+  height: 6vw;
   border-radius: 50%;
   background-color: rgb(255, 255, 255);
   box-shadow: 2px 3px 4px black ;
@@ -186,21 +186,22 @@ body {
 
 @keyframes followPath {
   0% {
-    transform: translate(-20vw, -16.5vw) rotate(0deg); /* Starting position */
+    transform: translate(-25vw, -20vw) rotate(0deg); /* Starting position */
   }
   25% {
-    transform: translate(15vw, -16vw) rotate(90deg); /* Move to the top-right corner */
+    transform: translate(20vw, -19vw) rotate(90deg); /* Move to the top-right corner */
   }
   50% {
-    transform: translate(15vw, 12vw) rotate(180deg); /* Move to the bottom-right corner */
+    transform: translate(19vw, 16vw) rotate(180deg); /* Move to the bottom-right corner */
   }
   75% {
-    transform: translate(-19vw, 11.5vw) rotate(270deg); /* Move to the bottom-left corner */
+    transform: translate(-25vw, 16vw) rotate(270deg); /* Move to the bottom-left corner */
   }
   100% {
-    transform: translate(-20.5vw, -16vw) rotate(360deg); /* Back to the starting point */
+    transform: translate(-25vw, -20vw) rotate(360deg); /* Back to the starting point */
   }
 }
+
 
 .items:nth-child(1) { animation-delay: 0s; }
 .items:nth-child(2) { animation-delay: -1.67s; }
