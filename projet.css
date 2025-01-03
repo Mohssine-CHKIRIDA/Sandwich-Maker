@@ -9,7 +9,7 @@ body {
   
 }
 .bg-image {
-  background-image: url("/Sandwich-Maker/images/Night-Front-scaled.jpg"); 
+
   filter: blur(8px);
   -webkit-filter: blur(8px);
   position: fixed;
