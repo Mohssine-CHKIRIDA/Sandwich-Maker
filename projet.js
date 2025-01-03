@@ -66,7 +66,7 @@ function finishSandwich() {
     Sandwich.appendChild(tophalf);
 
     tophalf.style.position = 'absolute';
-    tophalf.style.top = `${20 - bottomhalf.childElementCount * 3}%`; 
+    tophalf.style.top = `${20 - bottomhalf.childElementCount * 2}%`; 
     tophalf.style.left = '18%'; 
     tophalf.style.zIndex = '15'; 
     isSandwichFinished=true;
