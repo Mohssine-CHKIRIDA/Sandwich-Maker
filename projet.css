@@ -1,26 +1,46 @@
 body {
-  background-color: rgba(20, 55, 170, 0.808);
+  background-color: rgba(124, 106, 4, 0.719);
   color: black;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  
 }
-
+.bg-image {
+  background-image: url("/images/Night-Front-scaled.jpg"); 
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat:repeat;
+  background-size: cover;
+  z-index: -1; 
+}
 .title {
   font-style: oblique;
+  background: linear-gradient(90deg, #df4c4c, #2f1cdb81,rgba(94, 45, 228, 0.726)); /* Define your gradient */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; }
+.exp{
+  color: rgba(213, 240, 226, 0.815);
+  font-size: larger;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
-
 .main-board {
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-  margin-top: 80px;
+  margin-top: 40px;
   border-radius: 50px;
-  width: 50vw; /* Matches the width of the main board */
-  height: 40vw; /* Matches the height of the main board */
+  width: 50vw; 
+  height: 40vw; 
   background-color: burlywood;
   transform-style: preserve-3d;
   transform: rotateX(40deg);
@@ -42,17 +62,17 @@ body {
   align-items: center;
   justify-content: center;
   width: 15vw; 
-  height: 10vw; /* Dome-like height for a burger bun */
-  background: linear-gradient(145deg, #f5a623, #e8a642); /* Warm golden-brown color gradient */
-  border-radius: 50%; /* Fully rounded dome shape */
+  height: 10vw; 
+  background: linear-gradient(145deg, #f5a623, #e8a642); 
+  border-radius: 50%; 
   box-shadow: 
-    inset 0 -9px 10px rgba(0, 0, 0, 0.3), /* Inner shadow for texture */
-    0 6px 12px rgba(0, 0, 0, 0.4); /* Outer shadow for depth */
-  border: 3px solid #d4881e; /* Slightly darker border for contrast */
+    inset 0 -9px 10px rgba(0, 0, 0, 0.3), 
+    0 6px 12px rgba(0, 0, 0, 0.4); 
+  border: 3px solid #d4881e; 
   transform-style: preserve-3d;
-  transform: rotateX(40deg); /* Lift and rotate for a 3D burger effect */
+  transform: rotateX(40deg); 
   position: absolute;
-  z-index: 4; /* Layered above the bottomhalf */
+  z-index: 4; 
   left: 20%;
 }
 
@@ -92,15 +112,15 @@ body {
   justify-content: center;
   left: 18%;
   width: 15vw;
-  height: 10vw; /* Légèrement aplati pour une meilleure proportion */
-  background: linear-gradient(145deg, #f7c469, #e8a642); /* Dégradé pour simuler la texture du pain */
-  border-radius: 50% 50% 30% 30%; /* Courbes ajustées pour un effet réaliste */
+  height: 10vw; 
+  background: linear-gradient(145deg, #f7c469, #e8a642); 
+  border-radius: 50% 50% 30% 30%; 
   box-shadow: 
-    inset 0 -10px 4px rgba(0, 0, 0, 0.3), /* Ombre intérieure pour plus de relief */
-    0 6px 12px rgba(0, 0, 0, 0.4); /* Ombre extérieure plus prononcée */
-  border: 2px solid #d4881e; /* Bordure légèrement plus sombre */
+    inset 0 -10px 4px rgba(0, 0, 0, 0.3), 
+    0 6px 12px rgba(0, 0, 0, 0.4); 
+  border: 2px solid #d4881e; 
   transform-style: preserve-3d;
-  transform: rotateX(35deg); /* Réduit l'inclinaison pour plus de naturel */
+  transform: rotateX(35deg); 
   position: relative;
   z-index: 3;
 }
@@ -123,21 +143,21 @@ body {
 .item-track {
   position: absolute;
   width: 100%;
-  height: 100%;
+  height:100%;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1;
-  transform: rotate(0deg); /* Keep the track stationary */
+  transform: rotate(0deg); 
 }
 
 .item-track::before {
   content: '';
   position: absolute;
-  width: 50vw; /* Slightly larger than the item-track */
+  width: 50vw; 
   height: 40vw;
   border-radius: 50px;
-  border: 4px dashed rgba(0, 0, 0, 0.7); /* Dashed border for train rail effect */
+  border: 4px dashed rgba(0, 0, 0, 0.7); 
   z-index: -1;
 }
 
@@ -145,9 +165,9 @@ body {
   content: '';
   position: absolute;
   border-radius: 50px;
-  width: 43vw; /* Slightly smaller than the item-track */
+  width: 43vw; 
   height: 32vw;
-  border: 4px dashed rgba(0, 0, 0, 0.7); /* Dashed border for train rail effect */
+  border: 4px dashed rgba(0, 0, 0, 0.7); 
   z-index: 1;
 }
 
@@ -186,7 +206,7 @@ body {
 
 @keyframes followPath {
   0% {
-    transform: translate(-25vw, -20vw) rotate(0deg); /* Starting position */
+    transform: translate(-25vw, -20vw) rotate(0deg); 
   }
   25% {
     transform: translate(20vw, -19vw) rotate(90deg); /* Move to the top-right corner */
@@ -202,7 +222,6 @@ body {
   }
 }
 
-
 .items:nth-child(1) { animation-delay: 0s; }
 .items:nth-child(2) { animation-delay: -1.67s; }
 .items:nth-child(3) { animation-delay: -3.33s; }
@@ -216,7 +235,7 @@ body {
   margin-top: 20px;
   padding: 10px 20px;
   font-size: 1rem;
-  background-color: #4caf50; /* Green background */
+  background-color: #4caf50; 
   color: white;
   border: none;
   border-radius: 5px;
@@ -226,18 +245,18 @@ body {
 }
 
 #finishButton:hover {
-  background-color: #45a049; /* Darker green on hover */
-  transform: scale(1.05); /* Slight enlargement */
+  background-color: #45a049; 
+  transform: scale(1.05); 
 }
 
 #finishButton:active {
-  transform: scale(0.95); /* Slight shrink on click */
+  transform: scale(0.95); 
 }
 .clearPlate {
   margin-top: 20px;
   padding: 10px 20px;
   font-size: 1rem;
-  background-color: #4caf50; /* Green background */
+  background-color: #4caf50; 
   color: white;
   border: none;
   border-radius: 5px;
@@ -247,12 +266,12 @@ body {
 }
 
 .clearPlate:hover {
-  background-color: #45a049; /* Darker green on hover */
-  transform: scale(1.05); /* Slight enlargement */
+  background-color: #45a049; 
+  transform: scale(1.05); 
 }
 
 .clearPlate:active {
-  transform: scale(0.95); /* Slight shrink on click */
+  transform: scale(0.95); 
 }
 
 
